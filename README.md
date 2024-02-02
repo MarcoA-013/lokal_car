@@ -1,24 +1,18 @@
-# README
+# Lokal Car
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este projeto foi inspirado no curso de SQL da Campus Code, e totalmente desenvolvido após o término.
 
-Things you may want to cover:
+Trata-se de um CRUD desenvolvido em Ruby on Rails, com banco SQLite, onde desenvolvi algumas características 
+e utilitários, como upload de imagens e arquivos de texto para popular o banco de dados.
 
-* Ruby version
+A base do aplicativo pode ser alterada para projetos de aprendizado e pequenos negócios, o BD é bastante leve e 
+funcional.
 
-* System dependencies
+## Informações do ambiente:
 
-* Configuration
+| Tool  | Versão |
+| --------| ------ |
+| Ruby on Rails   | 7.0.4.3  |
+| SQLite   | 3  |
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
