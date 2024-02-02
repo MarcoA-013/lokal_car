@@ -8,6 +8,14 @@ e utilitários, como upload de imagens e arquivos de texto para popular o banco 
 A base do aplicativo pode ser alterada para projetos de aprendizado e pequenos negócios, o BD é bastante leve e 
 funcional.
 
+### Testando o App
+#### Localmente:
+Com o Ruby on Rails 7.x instalado, entre na pasta do projeto e digite no terminal 
+`Rails server`
+
+No seu navegador, procure a referência 
+`localhost:3000`
+
 ## Ruby on Rails v 7.0.4.3 
 ## SQLite 3
 ### About me
