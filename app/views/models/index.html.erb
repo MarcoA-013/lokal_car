@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Modelos</h1>
+<!-- //exibir os dados de models em uma tabela com aparencia de excel -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Modelo</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @models.each do |model| %>
+      <tr>
+        <td><%= model.model %></td>
+        <td>
+          <%= link_to "Editar", edit_model_path(model) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<%= link_to "Novo modelo", new_model_path %>
+<!-- place a button to load files here -->
+<div
+  class="linha"
+  style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+    <p>Importar vários modelos, Selecione:</p>
+    <br>
+</div>
+<div><br>
+  <form action="/models/import" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Importar">
+  </form>
+</div>
+
+

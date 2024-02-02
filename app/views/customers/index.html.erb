@@ -1,0 +1,47 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Clientes</h1>
+<!-- //exibir os dados de customers em uma tabela com aparencia de excel -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Sobrenome</th>
+      <th scope="col">Fone</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">Aniversário</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.lastname %></td>
+        <td><%= customer.phone %></td>
+        <td><%= customer.city %></td>
+        <td><%= customer.birth_date.strftime("%d/%m") %></td>
+        <td>
+          <%= link_to "Editar", edit_customer_path(customer) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<div class="linha">
+  <div class="coluna-50">
+    <%= link_to "Novo Cliente", new_customer_path %>
+  </div>
+  <div class="coluna-50">
+      <%= form_tag import_customers_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import" %>
+      <% end %>
+  </div>
+</div>
+
+
+
+
+

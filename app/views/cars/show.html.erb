@@ -1,0 +1,13 @@
+<h2>Detalhes do Veículo</h2>
+
+<p style="color: green"><%= notice %></p>
+
+<article>
+  <%= render @car %>
+</article>
+
+<div class="linha">
+  <div class="coluna-33"><%= button_to "Editar", edit_car_path(@car), method: :get %></div>
+  <div class="coluna-33"><%= button_to "Voltar", cars_path, method: 'get' %></div>
+  <div class="coluna-33"><%= button_to "Excluir", @car, method: :delete %></div>
+</div>

@@ -1,0 +1,13 @@
+<h1>Editando Veículo</h1>
+<div style="color: red">
+  <p>Status: <%= @car.status %></p>
+</div>
+<%= render "form", car: @car %>
+
+<br>
+
+
+<div class="linha">
+    <%=  button_to 'Status', status_car_path, { method: 'patch' } %>
+    <%= button_to "Voltar", cars_path, method: 'get' %>
+</div>

@@ -1,0 +1,14 @@
+<h3 style="text-align: center;">LocalKars, <code><kbd>aqui</kbd> você acha!</code></h3>
+  <div class="container">
+    <% @cars.each do | car | %>
+      <% render car %>
+        <dl id="cars"> 
+          <%= image_tag car.image, width: 240 if car.image.attached? %><br/>
+          <p style="font-size: small; color: rgb(199, 196, 202);">
+            <%= link_to car.name, car %>
+            Ano/Modelo: <%= car.year %>
+          </p>
+        </dl>
+    <%  end  %>
+  </div>
+

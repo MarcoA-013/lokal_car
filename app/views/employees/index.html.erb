@@ -1,0 +1,47 @@
+<p style="color: green"><%= notice %></p>
+ 
+<!-- //exibir os dados de employee em uma tabela com aparencia de excel -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Data de início</th>
+      <th scope="col">Ocupação</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.phone %></td>
+        <!-- //formatar a data de inicio -->
+        <td><%= employee.contract_date.strftime("%d/%m/%Y") %></td>
+        <td><%= employee.position.description %></td>
+        <td>
+          <%= link_to "Editar", edit_employee_path(employee) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<div class="linha">
+  <div class="coluna-25">
+    <%= button_to "Novo Colaborador", new_employee_path %>
+  </div>
+  <div class="coluna-25">
+    <%= button_to "Nova Ocupação", new_position_path %>
+  </div>
+  <div class="coluna-25">
+    <%= form_tag import_employees_path, multipart: true do %>
+    <%= file_field_tag :file %>
+  </div>
+  <div class="coluna-25">
+        <%= submit_tag "Importar" %>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Fabricantes / Marcas</h1>
+
+<div id="brands">
+  <% @brands.each do |brand| %>
+    <p>
+      <%= link_to brand.brand, brand %>
+    </p>
+  <% end %>
+</div>
+
+<%= button_to "Novas Marcas", new_brand_path, method: 'get' %>
+<!-- PLACE A BUTTON TO LOAD FILES HERE -->
+<div
+  class="linha"
+  style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+    <p>Importar várias marcas, Selecione:</p>
+    <br>
+</div>
+<div><br>
+  <form action="/brands/import" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Importar">
+  </form>
+</div>  
+
+

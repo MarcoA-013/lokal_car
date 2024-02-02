@@ -1,0 +1,20 @@
+<h1>Nova Ocupação</h1>
+
+<%= render "form", position: @position %>
+
+<br>
+
+<div>
+  <%= link_to "Voltar", positions_path %>
+</div>
+<!--  Place a button to load files to import data -->
+<div
+  class="linha"
+  style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+    <p>Importar várias ocupações, Selecione:</p>
+  <br>
+  <form action="/positions/import" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Importar">
+  </form> 
+</div>  

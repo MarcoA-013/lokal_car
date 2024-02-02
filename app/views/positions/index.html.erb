@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Ocupações</h1>
+
+<div id="positions">
+  <% @positions.each do |position| %>
+    <p>
+      <%= link_to position.description, position %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Cadastrar", new_position_path %>

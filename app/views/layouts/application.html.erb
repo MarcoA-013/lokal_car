@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LocalKar</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header><nav>
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Locações', locations_path %>
+      <%= link_to 'Veículos', cars_path %>
+      <%= link_to 'Marcas', brands_path %>
+      <%= link_to 'Modelos', models_path %>
+      <%= link_to 'Colaboradores', employees_path %>
+      <%= link_to 'Clientes', customers_path %>
+    </nav></header>
+
+    <article>
+    <% if user_signed_in? %>
+      Olá, <%= current_user.name %>
+      <%= link_to 'Desconectar', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Fazer Login', new_user_session_path %> |
+      <%= link_to 'Primeiro Acesso', new_user_registration_path %>
+    <% end %>
+    </article>
+    
+    <%= yield %>
+  </body>
+</html>

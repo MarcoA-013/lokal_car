@@ -1,0 +1,47 @@
+<%= javascript_include_tag "application" %>
+
+<%= form_with(model: employee) do |form| %>
+  <% if employee.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+        <% employee.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label "Nome:", style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <!-- A form text field using library to format the phone number field
+     https://igorescobar.github.io/jQuery-Mask-Plugin/-->
+    <%= form.label "Telefone():" %>
+    <%= form.text_field :phone, class: "date", id: "phone", data: { mask: "(00) 00000-0000" } %>
+  </div>
+
+  <div>
+    <%= form.label "Data de início:", style: "display: block" %>
+    <%= form.date_field :contract_date, class: "date" %>
+  </div>
+
+  <!-- A collection of positions field -->
+    <%= form.label :position_id, style: "display: block" %>
+    <%= form.collection_select :position_id, Position.all, :id, :description %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<script>
+  $(document).ready(function(){
+    $('.sp_celphones').mask('(00) 00000-0000');
+  }); 
+</script>

@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Cars</h1>
+
+<div id="cars">
+  <% @cars.each do |car| %>
+    <small>
+    <p>
+      <%= link_to car.name, car %>
+      , 
+      <%= car.year %>
+    </p>
+    </small>  
+  <% end %>
+</div>
+
+<%= link_to "Cadastrar Veículo", new_car_path %>
